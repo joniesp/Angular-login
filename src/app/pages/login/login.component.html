@@ -1,0 +1,17 @@
+<h1 class="text-center text-primary mt-5">LOGIN</h1>
+<div class="container">
+  <form class="mt-5" (ngSubmit)="login(f)" #f="ngForm" >
+    <div class="form-group">
+      <label for="user">USUARIO</label>
+      <input type="text" name="user" [(ngModel)]="user.email" class="form-control" placeholder="USUARIO" email required>
+    </div>
+    <div class="form-group">
+      <label for="password">CONTRASEÑA</label>
+      <input type="password" name="password" class="form-control" [(ngModel)]="user.password" placeholder="CONTRASEÑA" required>
+    </div>
+    <div *ngIf="!loginTrue" class="alert alert-danger" role="alert">
+        Datos incorrectos
+    </div>
+    <button type="submit" class="btn btn-outline-primary btn-block">Login</button>
+  </form>
+</div>
